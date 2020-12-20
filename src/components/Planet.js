@@ -13,9 +13,6 @@ const Planet = () => {
         <>
             {pathname === "/" && (
                 <StyledRedPlanet
-                    drag
-                    dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
-                    dragElastic={0.1}
                     initial="hidden"
                     animate="show"
                     variants={redPlanetVariants}
@@ -27,14 +24,12 @@ const Planet = () => {
             )}
             {pathname === "/projects" && (
                 <StyledBluePlanet
-                    drag
-                    dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
-                    dragElastic={0.1}
                     initial="hidden"
                     animate="show"
                     variants={bluePlanetInVariants}
                     src={bluePlanet}
-                    exit="hidden"
+                    style={{ originY: "200%", originX: "-120%" }}
+                    exit="exit"
                     key="blue planet"
                 />
             )}

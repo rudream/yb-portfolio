@@ -92,23 +92,25 @@ const StyledHome = styled.div`
     overflow-x: hidden;
 `;
 
-const StyledTopRightGrid = styled.img`
+const StyledTopRightGrid = styled(motion.img)`
     position: absolute;
     top: 0;
     right: 0;
     width: 12vw;
     user-select: none;
+    z-index: -30;
 `;
 
-const StyledBottomLeftGrid = styled.img`
+const StyledBottomLeftGrid = styled(motion.img)`
     position: absolute;
     bottom: 0;
     left: 0;
     width: 12vw;
     user-select: none;
+    z-index: -30;
 `;
 
-const StyledStars = styled.img`
+export const StyledStars = styled.img`
     position: absolute;
     left: 50%;
     top: 50%;

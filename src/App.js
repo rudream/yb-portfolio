@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 import GlobalStyle from "./styles/GlobalStyles";
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
                     </Route>
                     <Route path="/projects" exact>
                         <Projects />
+                    </Route>
+                    <Route path="/contact" exact>
+                        <Contact />
                     </Route>
                 </Switch>
             </AnimatePresence>

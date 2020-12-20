@@ -14,19 +14,56 @@ const Nav = () => {
                 <img className="logo" src={logo} alt="logo" />
             </Link>
             <ul>
-                <motion.li className={`${pathname === "/" ? "selected" : ""}`}>
-                    <Link to="/">HOME</Link>
-                </motion.li>
-                <motion.li
-                    className={`${pathname === "/projects" ? "selected" : ""}`}
-                >
-                    <Link to="/projects">PROJECTS</Link>
-                </motion.li>
-                <motion.li
-                    className={`${pathname === "/contact" ? "selected" : ""}`}
-                >
-                    <Link to="/contact">CONTACT</Link>
-                </motion.li>
+                <li>
+                    <Link to="/">
+                        <StyledNavItem
+                            initial={{ opacity: "0.7", scale: "1" }}
+                            animate={{
+                                opacity: `${pathname === "/" ? "1" : "0.7"}`,
+                                scale: `${pathname === "/" ? "1.2" : "1"}`,
+                            }}
+                            transition={{ duration: 2 }}
+                        >
+                            HOME
+                        </StyledNavItem>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/projects">
+                        <StyledNavItem
+                            initial={{ opacity: "0.7", scale: "1" }}
+                            animate={{
+                                opacity: `${
+                                    pathname === "/projects" ? "1" : "0.7"
+                                }`,
+                                scale: `${
+                                    pathname === "/projects" ? "1.2" : "1"
+                                }`,
+                            }}
+                            transition={{ duration: 2 }}
+                        >
+                            PROJECTS
+                        </StyledNavItem>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/contact">
+                        <StyledNavItem
+                            initial={{ opacity: "0.7", scale: "1" }}
+                            animate={{
+                                opacity: `${
+                                    pathname === "/contact" ? "1" : "0.7"
+                                }`,
+                                scale: `${
+                                    pathname === "/contact" ? "1.2" : "1"
+                                }`,
+                            }}
+                            transition={{ type: "spring", duration: 2 }}
+                        >
+                            CONTACT
+                        </StyledNavItem>
+                    </Link>
+                </li>
             </ul>
         </StyledNav>
     );
@@ -50,21 +87,17 @@ const StyledNav = styled(motion.div)`
         justify-content: center;
         flex-grow: 8;
     }
-    li {
-        padding: 0rem 10rem;
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.2vw;
-        opacity: 0.7;
-    }
     .logo {
         width: 7vw;
         flex-grow: 2;
     }
-    .selected {
-        opacity: 1;
-        font-size: 1.5vw;
-    }
+`;
+
+const StyledNavItem = styled(motion.h5)`
+    padding: 0rem 10rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2vw;
 `;
 
 export default Nav;
