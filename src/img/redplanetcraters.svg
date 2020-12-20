@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="391.848" height="391.848" viewBox="0 0 391.848 391.848">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e65458"/>
+      <stop offset="1" stop-color="#3a0805"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_13" data-name="Group 13" transform="translate(-46.032 -662.151)">
+    <circle id="Ellipse_6" data-name="Ellipse 6" cx="195.924" cy="195.924" r="195.924" transform="translate(46.032 662.151)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="28.812" cy="28.812" r="28.812" transform="translate(204.5 749.549)" fill="#040506" opacity="0.2" style="isolation: isolate"/>
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="49.941" cy="49.941" r="49.941" transform="translate(183.372 921.463)" fill="#040506" opacity="0.2" style="isolation: isolate"/>
+    <circle id="Ellipse_9" data-name="Ellipse 9" cx="12.485" cy="12.485" r="12.485" transform="translate(75.805 883.046)" fill="#040506" opacity="0.2" style="isolation: isolate"/>
+    <circle id="Ellipse_10" data-name="Ellipse 10" cx="6.637" cy="6.637" r="6.637" transform="translate(292.858 728.403)" fill="#040506" opacity="0.2" style="isolation: isolate"/>
+    <circle id="Ellipse_11" data-name="Ellipse 11" cx="8.644" cy="8.644" r="8.644" transform="translate(216.025 858.076)" fill="#040506" opacity="0.2" style="isolation: isolate"/>
+    <circle id="Ellipse_12" data-name="Ellipse 12" cx="6.637" cy="6.637" r="6.637" transform="translate(379.467 813.125)" fill="#040506" opacity="0.2" style="isolation: isolate"/>
+    <circle id="Ellipse_13" data-name="Ellipse 13" cx="9.587" cy="9.587" r="9.587" transform="translate(321.705 877.867)" fill="#040506" opacity="0.2" style="isolation: isolate"/>
+    <circle id="Ellipse_14" data-name="Ellipse 14" cx="12.485" cy="12.485" r="12.485" transform="translate(108.459 765.876)" fill="#040506" opacity="0.2" style="isolation: isolate"/>
+  </g>
+</svg>
