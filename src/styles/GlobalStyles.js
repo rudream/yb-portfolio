@@ -7,6 +7,19 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         color: white;
     }
+    html{
+        &::-webkit-scrollbar{
+            width: 0.5rem
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: #4D789E;
+            border-radius: 2rem;
+        }
+        &::-webkit-scrollbar-track{
+            background-color: black;
+        }
+    }
+    
     body{
         background: black;
         font-family: "Quiet Sans", sans-serif;

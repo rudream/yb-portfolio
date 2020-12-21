@@ -2,14 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import Planet from "../components/Planet";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-import bottomLeft from "../img/bottomleftgrid.svg";
-import topRight from "../img/toprightgrid.svg";
-import github from "../img/github.svg";
-import linkedin from "../img/linkedin.svg";
-import stars from "../img/stars.svg";
+import bottomLeft from "../img/svgs/bottomleftgrid.svg";
+import topRight from "../img/svgs/toprightgrid.svg";
+import github from "../img/svgs/github.svg";
+import linkedin from "../img/svgs/linkedin.svg";
+import stars from "../img/svgs/stars.svg";
 
 import { iconVariants } from "../styles/animation";
+import FixScrollBug from "../components/FixScrollBug";
 
 const Home = () => {
     return (
@@ -46,41 +48,37 @@ const Home = () => {
                 >
                     React developer based in Toronto, CA
                 </StyledPhrase>
-                <div id="buttons-container">
-                    <StyledButton
-                        key="button"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1.1, delay: 3 }}
-                        exit={{ opacity: 0, transition: { duration: 0.5 } }}
-                    >
-                        <motion.p
-                            whileHover={{ scale: 1.05 }}
+                <motion.div
+                    id="buttons-container"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1.1, delay: 3 }}
+                    exit={{ opacity: 0, transition: { duration: 0.5 } }}
+                >
+                    <Link to="/projects">
+                        <StyledButton
+                            key="button"
+                            whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.2 }}
-                            exit={{ opacity: 0, transition: { duration: 0.5 } }}
                         >
-                            SEE MY WORK
-                        </motion.p>
-                    </StyledButton>
+                            <motion.p>SEE MY WORK</motion.p>
+                        </StyledButton>
+                    </Link>
                     <StyledIcon
                         key="linkedin"
                         variants={iconVariants}
-                        initial="hidden"
-                        animate="show"
                         whileHover="hover"
-                        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+                        initial="show"
                         src={linkedin}
                     />
                     <StyledIcon
                         key="github"
+                        initial="show"
                         variants={iconVariants}
-                        initial="hidden"
-                        animate="show"
                         whileHover="hover"
-                        exit={{ opacity: 0, transition: { duration: 0.5 } }}
                         src={github}
                     />
-                </div>
+                </motion.div>
             </StyledInfo>
         </StyledHome>
     );
@@ -172,6 +170,7 @@ const StyledButton = styled(motion.button)`
     width: 12vw;
     cursor: pointer;
     user-select: none;
+    will-change: transform;
     p {
         font-family: "Quiet Sans", sans-serif;
         text-align: center;
@@ -187,7 +186,7 @@ const StyledButton = styled(motion.button)`
 
 const StyledIcon = styled(motion.img)`
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.6;
 `;
 
 export default Home;

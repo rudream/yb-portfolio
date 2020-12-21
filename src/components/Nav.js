@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import logo from "../img/logo.svg";
+import logo from "../img/svgs/logo.svg";
 
 const Nav = () => {
     const { pathname } = useLocation();
@@ -79,7 +79,7 @@ const StyledNav = styled(motion.div)`
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 3;
     ul {
         display: flex;
         list-style: none;

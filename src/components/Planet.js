@@ -1,6 +1,6 @@
 import React from "react";
-import redPlanet from "../img/redplanet.svg";
-import bluePlanet from "../img/blueplanet.svg";
+import redPlanet from "../img/svgs/redplanet.svg";
+import bluePlanet from "../img/svgs/blueplanet.svg";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { redPlanetVariants, bluePlanetInVariants } from "../styles/animation";

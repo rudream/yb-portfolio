@@ -11,11 +11,7 @@ export const iconVariants = {
     },
     hover: {
         opacity: 1,
-        scale: 1.1,
-        transition: {
-            duration: 0.1,
-            type: "tween",
-        },
+        scale: 1.2,
     },
 };
 
