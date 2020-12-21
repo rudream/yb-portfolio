@@ -17,7 +17,6 @@ import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
     const data = props.props;
     const { name, img, imgTwo, desc, techs, features, live, code } = data;
-    console.log(features);
 
     const exitDetailHandler = (e) => {
         const element = e.target;
@@ -26,8 +25,6 @@ const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
             setDisplayingDetails(false);
         }
     };
-
-    console.log(name);
 
     const getTechnology = (tech) => {
         switch (tech) {
@@ -69,7 +66,7 @@ const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
                             <StyledTitle>{name}</StyledTitle>
                             <Technologies>
                                 <StyledLink
-                                    whileHover={{ scale: 1.3, opacity: 1 }}
+                                    whileHover={{ scale: 1.2, opacity: 1 }}
                                     onClick={(e) => {
                                         e.preventDefault();
                                         window.open(`${live}`);
@@ -79,7 +76,7 @@ const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
                                     <motion.h3>Live Demo</motion.h3>
                                 </StyledLink>
                                 <StyledLink
-                                    whileHover={{ scale: 1.3, opacity: 1 }}
+                                    whileHover={{ scale: 1.2, opacity: 1 }}
                                     onClick={(e) => {
                                         e.preventDefault();
                                         window.open(`${code}`);
@@ -154,10 +151,10 @@ const ExitButton = styled(motion.div)`
     justify-content: center;
     align-items: center;
     h1 {
-        height: 100%;
-        width: 100%;
         text-align: center;
         user-select: none;
+        height: 100%;
+        line-height: 100%;
     }
     cursor: pointer;
 `;
@@ -184,21 +181,6 @@ const StyledDetails = styled(motion.div)`
         margin-bottom: 2%;
     }
     margin: 20vh 0rem;
-`;
-
-const StyledTitleAndLinks = styled(motion.div)`
-    padding: 0% 0%;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    flex-direction: column;
-`;
-
-const StyledLinks = styled(motion.div)`
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
 `;
 
 const StyledDetailsImage = styled(motion.img)`

@@ -50,14 +50,12 @@ const StyledPreview = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    will-change: transform;
     opacity: 1;
 `;
 
 const PreviewImage = styled.img`
     width: 90%;
-    /* box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.7); */
-    filter: drop-shadow(13px 13px 10px rgba(0, 0, 0, 0.5));
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.7);
 `;
 
 const StyledTitle = styled.h2`

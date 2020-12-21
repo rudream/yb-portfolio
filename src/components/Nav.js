@@ -80,6 +80,7 @@ const StyledNav = styled(motion.div)`
     position: sticky;
     top: 0;
     z-index: 3;
+    max-width: 100vw;
     ul {
         display: flex;
         list-style: none;
@@ -91,13 +92,21 @@ const StyledNav = styled(motion.div)`
         width: 7vw;
         flex-grow: 2;
     }
+    @media screen and (max-width: 768px) {
+        .logo {
+            display: none;
+        }
+    }
 `;
 
 const StyledNavItem = styled(motion.h5)`
-    padding: 0rem 10rem;
+    padding: 0rem 8vw;
     text-align: center;
     font-weight: bold;
     font-size: 1.2vw;
+    @media screen and (max-width: 768px) {
+        font-size: 3vw;
+    }
 `;
 
 export default Nav;

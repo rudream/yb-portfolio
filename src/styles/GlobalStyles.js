@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     }
     html{
         &::-webkit-scrollbar{
-            width: 0.5rem
+            width: 0.0;
         }
         &::-webkit-scrollbar-thumb{
             background-color: #4D789E;
@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     
     body{
         background: black;
-        font-family: "Quiet Sans", sans-serif;
+        font-family: quiet-sans, sans-serif;
         overflow-x: hidden;
 
     }

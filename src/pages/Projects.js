@@ -3,13 +3,16 @@ import styled from "styled-components";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import stars from "../img/svgs/stars.svg";
 import Planet from "../components/Planet";
-import topLeft from "../img/svgs/toprightgrid.svg";
-import bottomRight from "../img/svgs/bottomleftgrid.svg";
+import bottomLeft from "../img/svgs/bottomleftgrid.svg";
+import topRight from "../img/svgs/toprightgrid.svg";
+
 import ProjectPreview from "../components/ProjectPreview";
 import ProjectsData from "../ProjectsData";
 import ProjectDetails from "../components/ProjectDetails";
 import { StyledStars } from "./Home";
 import FixScrollBug from "../components/FixScrollBug";
+
+import { StyledTopRightGrid, StyledBottomLeftGrid } from "./Home";
 
 const Projects = () => {
     const [displayingDetails, setDisplayingDetails] = useState(false);
@@ -32,14 +35,14 @@ const Projects = () => {
                 </AnimatePresence>
                 <StyledStars src={stars} />
                 <StyledStars2 src={stars} />
-                <StyledTopLeftGrid src={topLeft} />
-                <StyledBottomRightGrid src={bottomRight} />
+                <StyledBottomLeftGrid src={bottomLeft} />
+                <StyledTopRightGrid src={topRight} />
                 <Planet />
                 <StyledTitle
                     key="projects-title"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1.5, delay: 1 }}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 1 }}
                     exit={{ opacity: 0, transition: { duration: 0.5 } }}
                 >
                     PROJECTS
@@ -49,7 +52,7 @@ const Projects = () => {
                     animate={{ opacity: 1, top: "52vh" }}
                     transition={{
                         duration: 1,
-                        delay: 2,
+                        delay: 1.5,
                         type: "spring",
                     }}
                     exit={{ opacity: 0, transition: { duration: 0.4 } }}
@@ -88,26 +91,8 @@ const Projects = () => {
     );
 };
 
-const StyledTopLeftGrid = styled(motion.img)`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 12vw;
-    user-select: none;
-    z-index: -30;
-`;
-
-const StyledBottomRightGrid = styled(motion.img)`
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 12vw;
-    user-select: none;
-    z-index: -30;
-`;
-
 const StyledTitle = styled(motion.h1)`
-    letter-spacing: 0.5vw;
+    letter-spacing: 0.3vw;
     font-size: 4.7vw;
     text-align: left;
     cursor: default;
@@ -127,6 +112,10 @@ const StyledPreviews = styled(motion.div)`
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
     grid-gap: 3vw 3vw;
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+        width: 80vw;
+    }
 `;
 
 const StyledStars2 = styled(motion.img)`
