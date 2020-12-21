@@ -18,7 +18,7 @@ const Projects = () => {
 
     return (
         <div>
-            <AnimateSharedLayout type="crossfade">
+            <AnimateSharedLayout>
                 <AnimatePresence>
                     {displayingDetails ? (
                         <ProjectDetails
@@ -55,8 +55,6 @@ const Projects = () => {
                     exit={{ opacity: 0, transition: { duration: 0.4 } }}
                 >
                     <ProjectPreview
-                        y={"bottom"}
-                        x={"right"}
                         props={data.gamezilla}
                         displayingDetails={displayingDetails}
                         setDisplayingDetails={setDisplayingDetails}
@@ -64,8 +62,6 @@ const Projects = () => {
                         key={data.gamezilla.name}
                     />
                     <ProjectPreview
-                        y={"bottom"}
-                        x={"left"}
                         props={data.studyplayer}
                         displayingDetails={displayingDetails}
                         setDisplayingDetails={setDisplayingDetails}
@@ -73,8 +69,6 @@ const Projects = () => {
                         key={data.studyplayer.name}
                     />
                     <ProjectPreview
-                        y={"top"}
-                        x={"right"}
                         props={data.kbphotography}
                         displayingDetails={displayingDetails}
                         setDisplayingDetails={setDisplayingDetails}
@@ -82,8 +76,6 @@ const Projects = () => {
                         key={data.kbphotography.name}
                     />
                     <ProjectPreview
-                        y={"top"}
-                        x={"left"}
                         props={data.colorpalette}
                         displayingDetails={displayingDetails}
                         setDisplayingDetails={setDisplayingDetails}

@@ -22,7 +22,7 @@ export const ProjectsData = () => {
                 {
                     title: "Discover",
                     info:
-                        "Browse through popular games or search for your own among thousands of games.",
+                        "Browse through popular games or search for your own among thousands of selections.",
                 },
                 {
                     title: "Add To Library",

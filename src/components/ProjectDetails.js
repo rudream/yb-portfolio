@@ -11,12 +11,12 @@ import react from "../img/icons/react.svg";
 import redux from "../img/icons/redux.svg";
 import sass from "../img/icons/sass.svg";
 import link from "../img/icons/link.svg";
-import code from "../img/icons/code.svg";
+import codeIcon from "../img/icons/code.svg";
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
 const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
     const data = props.props;
-    const { name, img, imgTwo, desc, techs, features } = data;
+    const { name, img, imgTwo, desc, techs, features, live, code } = data;
     console.log(features);
 
     const exitDetailHandler = (e) => {
@@ -26,6 +26,8 @@ const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
             setDisplayingDetails(false);
         }
     };
+
+    console.log(name);
 
     const getTechnology = (tech) => {
         switch (tech) {
@@ -54,22 +56,36 @@ const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
         <>
             {displayingDetails && (
                 <CardShadow className="shadow" onClick={exitDetailHandler}>
-                    <StyledDetails layoutId={`${name}`}>
+                    <StyledDetails layoutId={`${name}`} exit={{ opacity: 0 }}>
+                        <ExitButton
+                            className="shadow"
+                            onClick={exitDetailHandler}
+                        >
+                            <h1 className="shadow" onClick={exitDetailHandler}>
+                                X
+                            </h1>
+                        </ExitButton>
                         <StyledHeader>
-                            <StyledTitle layoutId={`title ${name}`}>
-                                {name}
-                            </StyledTitle>
+                            <StyledTitle>{name}</StyledTitle>
                             <Technologies>
                                 <StyledLink
                                     whileHover={{ scale: 1.3, opacity: 1 }}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.open(`${live}`);
+                                    }}
                                 >
                                     <motion.img src={link} alt="link" />
                                     <motion.h3>Live Demo</motion.h3>
                                 </StyledLink>
                                 <StyledLink
                                     whileHover={{ scale: 1.3, opacity: 1 }}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.open(`${code}`);
+                                    }}
                                 >
-                                    <img src={code} alt="code" />
+                                    <img src={codeIcon} alt="code" />
                                     <h3>Source Code</h3>
                                 </StyledLink>
                                 {techs.map((tech) => {
@@ -127,6 +143,25 @@ const CardShadow = styled(motion.div)`
     }
 `;
 
+const ExitButton = styled(motion.div)`
+    background: #b32400;
+    width: 2vw;
+    height: 2vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        user-select: none;
+    }
+    cursor: pointer;
+`;
+
 const StyledDetails = styled(motion.div)`
     z-index: 10;
     width: 80%;
@@ -168,6 +203,7 @@ const StyledLinks = styled(motion.div)`
 
 const StyledDetailsImage = styled(motion.img)`
     max-width: 90%;
+    filter: drop-shadow(25px 25px 20px rgba(0, 0, 0, 0.5));
 `;
 
 const SecondImage = styled(motion.img)`

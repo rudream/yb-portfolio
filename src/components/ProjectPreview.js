@@ -3,16 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { ProjectPreviewVariant } from "../styles/animation";
 
-const ProjectPreview = ({
-    x,
-    y,
-    props,
-    displayingDetails,
-    setDisplayingDetails,
-    setCurrentData,
-}) => {
-    const [detailsProps, setDetailsProps] = useState({});
-
+const ProjectPreview = ({ props, setDisplayingDetails, setCurrentData }) => {
     const displayDetailsHandler = () => {
         document.body.style.overflow = "hidden";
         setCurrentData({ props });
@@ -22,7 +13,6 @@ const ProjectPreview = ({
     return (
         <>
             <StyledPreview
-                style={{ transformOrigin: `${y} ${x}`, opacity: 1 }}
                 whileHover={{ scale: 1.1 }}
                 onClick={displayDetailsHandler}
                 layoutId={`${props.name}`}
@@ -31,12 +21,16 @@ const ProjectPreview = ({
                     layoutId={`image ${props.name}`}
                     src={props.img}
                     alt={`${props.name} preview`}
+                    key={`${props.name}`}
                 />
                 <StyledTextWrapper>
-                    <StyledTitle layoutId={`title ${props.name}`}>
+                    <StyledTitle key={`${props.name}`}>
                         {props.name}
                     </StyledTitle>
-                    <StyledSubtitle layoutId={`desc ${props.name}`}>
+                    <StyledSubtitle
+                        layoutId={`desc ${props.name}`}
+                        key={`${props.name}2`}
+                    >
                         {props.desc}
                     </StyledSubtitle>
                 </StyledTextWrapper>
