@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     }
     img{
         user-select: none;
+        user-drag: none;
     }
 
 `;

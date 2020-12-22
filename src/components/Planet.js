@@ -62,6 +62,9 @@ const StyledRedPlanet = styled(motion.img)`
     z-index: -5;
     user-select: none;
     user-drag: none;
+    @media screen and (max-width: 768px) {
+        width: 40vw;
+    }
 `;
 
 const StyledPurplePlanet = styled(motion.img)`
@@ -74,6 +77,7 @@ const StyledPurplePlanet = styled(motion.img)`
     user-drag: none;
     @media screen and (max-width: 768px) {
         top: 10vh;
+        width: 40vw;
     }
 `;
 
@@ -86,6 +90,9 @@ const StyledBluePlanet = styled(motion.img)`
     user-select: none;
     user-drag: none;
     transform-origin: -120% 200%;
+    @media screen and (max-width: 768px) {
+        width: 40vw;
+    }
 `;
 
 export default Planet;

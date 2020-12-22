@@ -84,7 +84,7 @@ const Contact = () => {
                     exit="exit"
                 >
                     <img src={linkedin} alt="email icon" />
-                    <h2>linkedin.com/in/yassineboun</h2>
+                    <h2 id="linkedin-text">linkedin.com/in/yassineboun</h2>
                 </ContactInfo>
                 <ContactInfo
                     initial={{ opacity: 0, y: 200 }}
@@ -119,12 +119,19 @@ const ContactStyle = styled(motion.div)`
     top: 35vh;
     width: 50vw;
     color: white;
-    height: 55vh;
+    height: 40vh;
     overflow: hidden;
-    padding-top: 2vh;
-    img {
-        height: 3vw;
-        width: 3vw;
+    padding-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @media screen and (max-width: 768px) {
+        justify-content: space-around;
+        width: 80vw;
+        height: 30vh;
+        left: 15vw;
+        top: 25vh;
     }
 `;
 
@@ -137,13 +144,10 @@ const StyledTitle = styled(motion.h1)`
     left: 18vw;
     top: 15vh;
     user-select: none;
-`;
-
-const Circle = styled.div`
-    border-radius: 50%;
-    width: 3vw;
-    height: 3vw;
-    background: white;
+    @media screen and (max-width: 768px) {
+        font-size: 8vw;
+        left: 22vw;
+    }
 `;
 
 const ContactInfo = styled(motion.div)`
@@ -154,10 +158,28 @@ const ContactInfo = styled(motion.div)`
         font-size: 2.2vw;
         margin-left: 1vw;
         height: 3vw;
+        line-height: 1;
+    }
+    img {
+        height: 3vw;
+        width: 3vw;
+    }
+    #linkedin-text {
+        line-height: 1.25;
     }
     user-select: none;
     cursor: pointer;
     transform-origin: center left;
+    @media screen and (max-width: 768px) {
+        h2 {
+            font-size: 5vw;
+            height: 7vw;
+        }
+        img {
+            height: 7vw;
+            width: 7vw;
+        }
+    }
 `;
 
 export default Contact;

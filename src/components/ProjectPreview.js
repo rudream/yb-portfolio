@@ -41,16 +41,22 @@ const ProjectPreview = ({ props, setDisplayingDetails, setCurrentData }) => {
 
 const StyledPreview = styled(motion.div)`
     width: 100%;
-    min-height: 50vh;
+    height: 55vh;
     padding: 5vh 1vw;
     padding-bottom: 3vh;
     background-color: #212121;
     display: flex;
+    outline: 1px solid transparent;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
     opacity: 1;
+    @media screen and (max-width: 768px) {
+        justify-content: space-evenly;
+        height: 40vh;
+        padding: 1vh 1vw;
+    }
 `;
 
 const PreviewImage = styled.img`
@@ -61,6 +67,10 @@ const PreviewImage = styled.img`
 const StyledTitle = styled.h2`
     font-size: 2vw;
     text-align: left;
+    @media screen and (max-width: 768px) {
+        font-size: 7vw;
+        text-align: center;
+    }
 `;
 
 const StyledSubtitle = styled.h4`
@@ -69,6 +79,11 @@ const StyledSubtitle = styled.h4`
     text-align: left;
     max-width: 80%;
     opacity: 0.7;
+    @media screen and (max-width: 768px) {
+        text-align: center;
+        max-width: 100%;
+        font-size: 3.1vw;
+    }
 `;
 
 const StyledTextWrapper = styled.div`
@@ -78,6 +93,12 @@ const StyledTextWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    @media screen and (max-width: 768px) {
+        height: 40%;
+        justify-content: space-around;
+        margin-top: 0;
+        height: 20%;
+    }
 `;
 
 export default ProjectPreview;

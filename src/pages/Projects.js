@@ -48,8 +48,11 @@ const Projects = () => {
                     PROJECTS
                 </StyledTitle>
                 <StyledPreviews
-                    initial={{ opacity: 0, top: "100vh" }}
-                    animate={{ opacity: 1, top: "52vh" }}
+                    initial={{ top: "100vh", opacity: 0 }}
+                    animate={{
+                        top: `${window.innerWidth > 768 ? "52vh" : "35vh"}`,
+                        opacity: 1,
+                    }}
                     transition={{
                         duration: 1,
                         delay: 1.5,
@@ -100,11 +103,16 @@ const StyledTitle = styled(motion.h1)`
     left: 28vw;
     top: 30vh;
     user-select: none;
+    @media screen and (max-width: 768px) {
+        top: 18vh;
+        left: 26vw;
+        font-size: 10vw;
+    }
 `;
 
 const StyledPreviews = styled(motion.div)`
     position: absolute;
-    top: 100vh;
+    top: 52vh;
     left: 50vw;
     transform: translateX(-50%);
     width: 66vw;
@@ -114,6 +122,7 @@ const StyledPreviews = styled(motion.div)`
     grid-gap: 3vw 3vw;
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
+        top: 35vh;
         width: 80vw;
     }
 `;
@@ -124,8 +133,6 @@ const StyledStars2 = styled(motion.img)`
     top: 150%;
     transform: translate(-50%, -50%);
     width: 70vw;
-    user-select: none;
-    user-drag: none;
     z-index: -20;
 `;
 

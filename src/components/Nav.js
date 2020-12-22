@@ -22,7 +22,6 @@ const Nav = () => {
                                 opacity: `${pathname === "/" ? "1" : "0.7"}`,
                                 scale: `${pathname === "/" ? "1.2" : "1"}`,
                             }}
-                            transition={{ duration: 2 }}
                         >
                             HOME
                         </StyledNavItem>
@@ -40,7 +39,6 @@ const Nav = () => {
                                     pathname === "/projects" ? "1.2" : "1"
                                 }`,
                             }}
-                            transition={{ duration: 2 }}
                         >
                             PROJECTS
                         </StyledNavItem>
@@ -58,7 +56,6 @@ const Nav = () => {
                                     pathname === "/contact" ? "1.2" : "1"
                                 }`,
                             }}
-                            transition={{ type: "spring", duration: 2 }}
                         >
                             CONTACT
                         </StyledNavItem>

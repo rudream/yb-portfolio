@@ -62,7 +62,7 @@ const Home = () => {
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <motion.p>SEE MY WORK</motion.p>
+                            SEE MY WORK
                         </StyledButton>
                     </Link>
                     <StyledIcons>
@@ -135,7 +135,7 @@ export const StyledStars = styled.img`
 
 const StyledInfo = styled(motion.div)`
     position: absolute;
-    top: 56%;
+    top: 50%;
     left: 43%;
     transform: translate(-49%, -50%);
     display: flex;
@@ -180,13 +180,13 @@ const StyledIcons = styled.div`
 
 const StyledName = styled(motion.h1)`
     letter-spacing: 0.3vw;
-    font-size: 3.3vw;
+    font-size: 3.8vw;
     text-align: left;
     margin-bottom: 1vh;
     cursor: default;
     @media screen and (max-width: 768px) {
         text-align: center;
-        font-size: 11vw;
+        font-size: 12vw;
         margin-bottom: 2vh;
     }
 `;
@@ -221,23 +221,20 @@ const StyledButton = styled(motion.button)`
     width: 12vw;
     cursor: pointer;
     user-select: none;
-    p {
-        font-family: quiet-sans, sans-serif;
-        text-align: center;
-        font-weight: bold;
-        letter-spacing: 0.1vw;
-        font-size: 1.1vw;
-        white-space: nowrap;
-        line-height: 100%;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1vw;
+    font-weight: bold;
+    font-family: quiet-sans, sans-serif;
+    line-height: 1.25;
     @media screen and (max-width: 768px) {
         width: 40vw;
         max-height: 10vh;
-        padding: 2.2vh 1vw;
-        p {
-            font-size: 4vw;
-            text-align: center;
-        }
+        padding: 1vh 1vw;
+        font-size: 4vw;
+        line-height: 1.3;
     }
 `;
 

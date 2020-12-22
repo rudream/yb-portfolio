@@ -142,9 +142,9 @@ const CardShadow = styled(motion.div)`
 
 const ExitButton = styled(motion.div)`
     background: #b32400;
-    width: 2vw;
-    height: 2vw;
     position: absolute;
+    width: 3vw;
+    height: 3vw;
     top: 0;
     right: 0;
     display: flex;
@@ -153,10 +153,17 @@ const ExitButton = styled(motion.div)`
     h1 {
         text-align: center;
         user-select: none;
-        height: 100%;
-        line-height: 100%;
     }
     cursor: pointer;
+    @media screen and (max-width: 768px) {
+        width: 5vw;
+        height: 5vw;
+        h1 {
+            font-size: 4vw;
+            line-height: 1.25;
+            padding-bottom: 0.5vh;
+        }
+    }
 `;
 
 const StyledDetails = styled(motion.div)`
@@ -171,6 +178,7 @@ const StyledDetails = styled(motion.div)`
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 3vh;
     img {
         width: 100%;
     }
@@ -181,6 +189,14 @@ const StyledDetails = styled(motion.div)`
         margin-bottom: 2%;
     }
     margin: 20vh 0rem;
+    @media screen and (max-width: 768px) {
+        padding: 0;
+        padding-bottom: 17vh;
+        width: 80vw;
+        h6 {
+            font-size: 8vw;
+        }
+    }
 `;
 
 const StyledDetailsImage = styled(motion.img)`
@@ -209,6 +225,11 @@ const StyledLink = styled(motion.div)`
         user-select: none;
     }
     cursor: pointer;
+    @media screen and (max-width: 768px) {
+        h3 {
+            font-size: 2vw;
+        }
+    }
 `;
 
 const StyledHeader = styled(motion.div)`
@@ -218,6 +239,11 @@ const StyledHeader = styled(motion.div)`
     align-items: center;
     margin: 2% 0%;
     height: 20vh;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+        height: 15vh;
+    }
 `;
 
 const StyledTitle = styled(motion.h1)`
@@ -227,6 +253,12 @@ const StyledTitle = styled(motion.h1)`
     padding: 5% 0;
     width: 40%;
     white-space: nowrap;
+    @media screen and (max-width: 768px) {
+        text-align: center;
+        font-size: 8vw;
+        font-weight: normal;
+        width: 100%;
+    }
 `;
 
 const StyledDescription = styled(motion.h4)`
@@ -237,6 +269,10 @@ const StyledDescription = styled(motion.h4)`
     text-align: left;
     margin: 5% 5%;
     margin-bottom: 3%;
+    @media screen and (max-width: 768px) {
+        font-size: 5vw;
+        text-align: center;
+    }
 `;
 
 const Technologies = styled(motion.div)`
@@ -246,6 +282,10 @@ const Technologies = styled(motion.div)`
     align-items: center;
     flex-wrap: wrap;
     width: 60%;
+    @media screen and (max-width: 768px) {
+        justify-content: space-around;
+        width: 100%;
+    }
 `;
 
 const Technology = styled(motion.div)`
@@ -258,6 +298,8 @@ const Technology = styled(motion.div)`
         width: 5vw;
         max-height: 8vh;
     }
+    @media screen and (max-width: 768px) {
+    }
 `;
 
 const Features = styled.div`
@@ -267,12 +309,16 @@ const Features = styled.div`
     margin-top: 1%;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        height: auto;
+    }
 `;
 
 const FeatureStyle = styled.div`
-    padding: 5rem;
+    padding: 4vw;
     h3 {
-        font-size: 1.7vw;
+        font-size: 1.9vw;
         white-space: nowrap;
         opacity: 0.9;
     }
@@ -280,12 +326,23 @@ const FeatureStyle = styled.div`
         width: 100%;
         background: #4d789e;
         height: 0.5rem;
-        margin: 1rem 0rem;
+        margin: 1vh 0rem;
     }
     p {
         font-size: 1.2vw;
         padding: 1% 0%;
         opacity: 0.8;
+    }
+    @media screen and (max-width: 768px) {
+        h3 {
+            font-size: 4vw;
+        }
+        p {
+            font-size: 3vw;
+        }
+        .line {
+            height: 0.5vh;
+        }
     }
 `;
 
