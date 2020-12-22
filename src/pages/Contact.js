@@ -8,14 +8,22 @@ import email from "../img/icons/email.svg";
 import linkedin from "../img/svgs/linkedin.svg";
 
 import stars from "../img/svgs/stars.svg";
+import mobilestars from "../img/svgs/mobilestars.svg";
 import bottomLeft from "../img/svgs/bottomleftgrid.svg";
 import topRight from "../img/svgs/toprightgrid.svg";
-import { StyledTopRightGrid, StyledBottomLeftGrid, StyledStars } from "./Home";
+import {
+    StyledTopRightGrid,
+    StyledBottomLeftGrid,
+    StyledStars,
+    MobileStars,
+} from "./Home";
 
 const Contact = () => {
     return (
         <>
+            <Planet />
             <StyledStars src={stars} alt="stars background" />
+            <MobileStars src={mobilestars} alt="mobile stars" />
             <StyledTopRightGrid src={topRight} alt="toprightgrid" />
             <StyledBottomLeftGrid src={bottomLeft} alt="bottomleftgrid" />
             <StyledTitle
@@ -24,9 +32,8 @@ const Contact = () => {
                     opacity: 1,
                     x: 0,
                     transition: {
-                        type: "easeIn",
                         duration: 1,
-                        delay: 1,
+                        delay: 0.9,
                     },
                 }}
                 exit={{
@@ -40,7 +47,6 @@ const Contact = () => {
             >
                 GET IN TOUCH
             </StyledTitle>
-            <Planet />
             <ContactStyle>
                 <ContactInfo
                     initial={{ opacity: 0, y: 200 }}
@@ -58,11 +64,11 @@ const Contact = () => {
                     exit="exit"
                     onClick={(e) => {
                         e.preventDefault();
-                        window.open("mailto:rudream12@gmail.com");
+                        window.open("mailto:yassineboun12@gmail.com");
                     }}
                 >
                     <img src={email} alt="email icon" />
-                    <h2>rudream12@gmail.com</h2>
+                    <h2>yassineboun12@gmail.com</h2>
                 </ContactInfo>
                 <ContactInfo
                     initial={{ opacity: 0, y: 200 }}
@@ -79,12 +85,12 @@ const Contact = () => {
                     whileHover="hover"
                     onClick={(e) => {
                         e.preventDefault();
-                        window.open("https://www.linkedin.com/in/yassineboun/");
+                        window.open("https://github.com/rudream");
                     }}
                     exit="exit"
                 >
-                    <img src={linkedin} alt="email icon" />
-                    <h2 id="linkedin-text">linkedin.com/in/yassineboun</h2>
+                    <img src={github} alt="email icon" />
+                    <h2>github.com/rudream</h2>
                 </ContactInfo>
                 <ContactInfo
                     initial={{ opacity: 0, y: 200 }}
@@ -101,12 +107,12 @@ const Contact = () => {
                     whileHover="hover"
                     onClick={(e) => {
                         e.preventDefault();
-                        window.open("https://github.com/rudream");
+                        window.open("https://www.linkedin.com/in/yassineboun/");
                     }}
                     exit="exit"
                 >
-                    <img src={github} alt="email icon" />
-                    <h2>github.com/rudream</h2>
+                    <img src={linkedin} alt="email icon" />
+                    <h2 id="linkedin-text">linkedin.com/in/yassineboun</h2>
                 </ContactInfo>
             </ContactStyle>
         </>
@@ -151,6 +157,7 @@ const StyledTitle = styled(motion.h1)`
 `;
 
 const ContactInfo = styled(motion.div)`
+    outline: 1px solid transparent;
     display: flex;
     align-items: center;
     margin-bottom: 5vh;

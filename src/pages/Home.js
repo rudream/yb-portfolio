@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import Planet from "../components/Planet";
 import { motion } from "framer-motion";
@@ -9,24 +9,29 @@ import topRight from "../img/svgs/toprightgrid.svg";
 import github from "../img/svgs/github.svg";
 import linkedin from "../img/svgs/linkedin.svg";
 import stars from "../img/svgs/stars.svg";
+import mobilestars from "../img/svgs/mobilestars.svg";
 
 import { iconVariants } from "../styles/animation";
 import NoScrollOnHome from "../components/NoScrollOnHome";
 
+import CacheAllMedia from "../components/CacheAllMedia";
+
 const Home = () => {
     return (
         <StyledHome>
+            <CacheAllMedia />
             <NoScrollOnHome />
             <StyledTopRightGrid src={topRight} alt="top right dots" />
             <StyledBottomLeftGrid src={bottomLeft} alt="bottom left dots" />
             <StyledStars src={stars} alt="stars" />
+            <MobileStars src={mobilestars} alt="mobile stars" />
             <Planet />
             <StyledInfo>
                 <StyledName
                     key="name"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 1.5, delay: 1 }}
+                    transition={{ duration: 1.5, delay: 0.8 }}
                     exit={{ opacity: 0, transition: { duration: 0.5 } }}
                 >
                     YASSINE BOUNEKHLA
@@ -35,7 +40,7 @@ const Home = () => {
                     key="subtitle"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 1.1, delay: 1.3 }}
+                    transition={{ duration: 1.1, delay: 1.2 }}
                     exit={{ opacity: 0, transition: { duration: 0.5 } }}
                 >
                     SOFTWARE DEVELOPER
@@ -53,16 +58,16 @@ const Home = () => {
                     id="buttons-container"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 1.1, delay: 1.7 }}
+                    transition={{ duration: 1.1, delay: 1.8 }}
                     exit={{ opacity: 0, transition: { duration: 0.5 } }}
                 >
                     <Link to="/projects">
                         <StyledButton
                             key="button"
                             whileHover={{ scale: 1.1 }}
-                            transition={{ duration: 0.2 }}
+                            transition={{ type: "spring", duration: 0.2 }}
                         >
-                            SEE MY WORK
+                            <p>SEE MY WORK</p>
                         </StyledButton>
                     </Link>
                     <StyledIcons>
@@ -72,6 +77,12 @@ const Home = () => {
                             whileHover="hover"
                             initial="show"
                             src={linkedin}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.open(
+                                    "https://www.linkedin.com/in/yassineboun/"
+                                );
+                            }}
                         />
                         <StyledIcon
                             key="github"
@@ -79,6 +90,10 @@ const Home = () => {
                             variants={iconVariants}
                             whileHover="hover"
                             src={github}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.open("https://github.com/rudream");
+                            }}
                         />
                     </StyledIcons>
                 </StyledButtons>
@@ -129,6 +144,20 @@ export const StyledStars = styled.img`
     user-drag: none;
     z-index: -20;
     @media screen and (max-width: 768px) {
+        display: none;
+    }
+`;
+
+export const MobileStars = styled.img`
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    user-select: none;
+    user-drag: none;
+    z-index: -20;
+    @media screen and (min-width: 768px) {
         display: none;
     }
 `;
@@ -218,6 +247,7 @@ const StyledButton = styled(motion.button)`
     background: #9f3b3b;
     border-radius: 2rem;
     padding: 0.8rem 1rem;
+    outline: 1px solid transparent;
     width: 12vw;
     cursor: pointer;
     user-select: none;
@@ -229,6 +259,9 @@ const StyledButton = styled(motion.button)`
     font-weight: bold;
     font-family: quiet-sans, sans-serif;
     line-height: 1.25;
+    p {
+        margin-bottom: 0.4vh;
+    }
     @media screen and (max-width: 768px) {
         width: 40vw;
         max-height: 10vh;
@@ -240,7 +273,9 @@ const StyledButton = styled(motion.button)`
 
 const StyledIcon = styled(motion.img)`
     cursor: pointer;
+    width: 2.5vw;
     opacity: 0.7;
+    outline: 1px solid transparent;
     @media screen and (max-width: 768px) {
         width: 8vw;
     }

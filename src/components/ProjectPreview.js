@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { ProjectPreviewVariant } from "../styles/animation";
 
 const ProjectPreview = ({ props, setDisplayingDetails, setCurrentData }) => {
     const displayDetailsHandler = () => {
@@ -40,9 +39,8 @@ const ProjectPreview = ({ props, setDisplayingDetails, setCurrentData }) => {
 };
 
 const StyledPreview = styled(motion.div)`
-    width: 100%;
     height: 55vh;
-    padding: 5vh 1vw;
+    padding: 5vh 5vh;
     padding-bottom: 3vh;
     background-color: #212121;
     display: flex;
@@ -60,7 +58,7 @@ const StyledPreview = styled(motion.div)`
 `;
 
 const PreviewImage = styled.img`
-    width: 90%;
+    width: 100%;
     box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.7);
 `;
 

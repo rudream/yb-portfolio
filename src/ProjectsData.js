@@ -1,11 +1,11 @@
-import colorpalette from "./img/screenshots/colorpalette.png";
-import colorpalette2 from "./img/screenshots/colorpalette2.png";
-import gamezilla from "./img/screenshots/gamezilla.png";
-import gamezilla2 from "./img/screenshots/gamezilla2.png";
-import kbphotography from "./img/screenshots/kbphotography.png";
-import kbphotography2 from "./img/screenshots/kbphotography2.png";
-import studyplayer from "./img/screenshots/studyplayer.png";
-import studyplayer2 from "./img/screenshots/studyplayer2.png";
+import colorpalette from "./img/screenshots/colorpalette.jpg";
+import colorpalette2 from "./img/screenshots/colorpalette2.jpg";
+import gamezilla from "./img/screenshots/gamezilla.jpg";
+import gamezilla2 from "./img/screenshots/gamezilla2.jpg";
+import kbphotography from "./img/screenshots/kbphotography.jpg";
+import kbphotography2 from "./img/screenshots/kbphotography2.jpg";
+import studyplayer from "./img/screenshots/studyplayer.jpg";
+import studyplayer2 from "./img/screenshots/studyplayer2.jpg";
 
 export const ProjectsData = () => {
     return {
@@ -17,7 +17,7 @@ export const ProjectsData = () => {
             code: "https://github.com/rudream/gamezilla",
             desc:
                 "Browse through thousands of games and save them to your account library.",
-            techs: ["React", "Redux", "Firebase", "JavaScript"],
+            techs: ["React", "Redux", "Firebase"],
             features: [
                 {
                     title: "Discover",

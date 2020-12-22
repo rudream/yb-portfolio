@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import stars from "../img/svgs/stars.svg";
+import mobilestars from "../img/svgs/mobilestars.svg";
 import Planet from "../components/Planet";
 import bottomLeft from "../img/svgs/bottomleftgrid.svg";
 import topRight from "../img/svgs/toprightgrid.svg";
@@ -9,13 +10,18 @@ import topRight from "../img/svgs/toprightgrid.svg";
 import ProjectPreview from "../components/ProjectPreview";
 import ProjectsData from "../ProjectsData";
 import ProjectDetails from "../components/ProjectDetails";
-import { StyledStars } from "./Home";
 import FixScrollBug from "../components/FixScrollBug";
 
-import { StyledTopRightGrid, StyledBottomLeftGrid } from "./Home";
+import {
+    StyledTopRightGrid,
+    StyledBottomLeftGrid,
+    StyledStars,
+    MobileStars,
+} from "./Home";
 
 const Projects = () => {
     const [displayingDetails, setDisplayingDetails] = useState(false);
+    // eslint-disable-next-line
     const [data, setData] = useState(ProjectsData);
     const [currentData, setCurrentData] = useState({});
 
@@ -35,6 +41,7 @@ const Projects = () => {
                 </AnimatePresence>
                 <StyledStars src={stars} />
                 <StyledStars2 src={stars} />
+                <MobileStars src={mobilestars} alt="mobile stars" />
                 <StyledBottomLeftGrid src={bottomLeft} />
                 <StyledTopRightGrid src={topRight} />
                 <Planet />

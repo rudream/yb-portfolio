@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import css from "../img/icons/css.svg";
 import firebase from "../img/icons/firebase.svg";
-import firestore from "../img/icons/firestore.svg";
+import exit from "../img/icons/exit.svg";
 import html from "../img/icons/html.svg";
 import javascript from "../img/icons/javascript.svg";
 import react from "../img/icons/react.svg";
@@ -12,9 +12,13 @@ import redux from "../img/icons/redux.svg";
 import sass from "../img/icons/sass.svg";
 import link from "../img/icons/link.svg";
 import codeIcon from "../img/icons/code.svg";
-import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
-const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
+const ProjectDetails = ({
+    props,
+    displayingDetails,
+    setDisplayingDetails,
+    icons,
+}) => {
     const data = props.props;
     const { name, img, imgTwo, desc, techs, features, live, code } = data;
 
@@ -34,8 +38,6 @@ const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
                 return css;
             case "Firebase":
                 return firebase;
-            case "Firestore":
-                return firestore;
             case "Redux":
                 return redux;
             case "HTML":
@@ -58,9 +60,11 @@ const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
                             className="shadow"
                             onClick={exitDetailHandler}
                         >
-                            <h1 className="shadow" onClick={exitDetailHandler}>
-                                X
-                            </h1>
+                            <img
+                                className="shadow"
+                                src={exit}
+                                alt="close button"
+                            />
                         </ExitButton>
                         <StyledHeader>
                             <StyledTitle>{name}</StyledTitle>
@@ -73,7 +77,7 @@ const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
                                     }}
                                 >
                                     <motion.img src={link} alt="link" />
-                                    <motion.h3>Live Demo</motion.h3>
+                                    <motion.h3>Demo</motion.h3>
                                 </StyledLink>
                                 <StyledLink
                                     whileHover={{ scale: 1.2, opacity: 1 }}
@@ -83,7 +87,7 @@ const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
                                     }}
                                 >
                                     <img src={codeIcon} alt="code" />
-                                    <h3>Source Code</h3>
+                                    <h3>Code</h3>
                                 </StyledLink>
                                 {techs.map((tech) => {
                                     return (
@@ -92,6 +96,7 @@ const ProjectDetails = ({ props, displayingDetails, setDisplayingDetails }) => {
                                                 src={getTechnology(tech)}
                                                 alt={`${tech}`}
                                             />
+                                            <p>{tech}</p>
                                         </Technology>
                                     );
                                 })}
@@ -141,35 +146,26 @@ const CardShadow = styled(motion.div)`
 `;
 
 const ExitButton = styled(motion.div)`
-    background: #b32400;
     position: absolute;
     width: 3vw;
     height: 3vw;
-    top: 0;
-    right: 0;
+    top: 1.5vw;
+    right: 1.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    h1 {
-        text-align: center;
-        user-select: none;
-    }
     cursor: pointer;
+    opacity: 0.5;
     @media screen and (max-width: 768px) {
         width: 5vw;
         height: 5vw;
-        h1 {
-            font-size: 4vw;
-            line-height: 1.25;
-            padding-bottom: 0.5vh;
-        }
     }
 `;
 
 const StyledDetails = styled(motion.div)`
     z-index: 10;
     width: 80%;
-    padding: 0rem 2rem;
+    padding: 0rem 1.9vw;
     background: #212121;
     position: absolute;
     left: 10%;
@@ -184,9 +180,13 @@ const StyledDetails = styled(motion.div)`
     }
     h6 {
         font-size: 3vw;
-        font-weight: normal;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.15vw;
         margin-top: 2%;
-        margin-bottom: 2%;
+        margin-bottom: 1%;
+        text-align: left;
+        width: 90%;
     }
     margin: 20vh 0rem;
     @media screen and (max-width: 768px) {
@@ -195,6 +195,7 @@ const StyledDetails = styled(motion.div)`
         width: 80vw;
         h6 {
             font-size: 8vw;
+            text-align: center;
         }
     }
 `;
@@ -210,19 +211,19 @@ const SecondImage = styled(motion.img)`
 `;
 
 const StyledLink = styled(motion.div)`
-    opacity: 0.7;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     img {
-        width: 2.5vw;
+        width: 2vw;
         user-select: none;
         user-drag: none;
     }
     h3 {
-        font-weight: normal;
+        font-weight: lighter;
         user-select: none;
+        font-size: 1vw;
     }
     cursor: pointer;
     @media screen and (max-width: 768px) {
@@ -247,12 +248,13 @@ const StyledHeader = styled(motion.div)`
 `;
 
 const StyledTitle = styled(motion.h1)`
-    font-size: 3.4vw;
-    font-weight: lighter;
+    font-size: 3.2vw;
     text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.15vw;
     padding: 5% 0;
     width: 40%;
-    white-space: nowrap;
+    white-space: wrap;
     @media screen and (max-width: 768px) {
         text-align: center;
         font-size: 8vw;
@@ -262,13 +264,12 @@ const StyledTitle = styled(motion.h1)`
 `;
 
 const StyledDescription = styled(motion.h4)`
-    max-width: 80%;
+    width: 90%;
     font-weight: lighter;
     opacity: 0.8;
     font-size: 2.1vw;
     text-align: left;
-    margin: 5% 5%;
-    margin-bottom: 3%;
+    margin: 3% 0%;
     @media screen and (max-width: 768px) {
         font-size: 5vw;
         text-align: center;
@@ -281,7 +282,7 @@ const Technologies = styled(motion.div)`
     text-align: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 60%;
+    width: 50%;
     @media screen and (max-width: 768px) {
         justify-content: space-around;
         width: 100%;
@@ -295,7 +296,7 @@ const Technology = styled(motion.div)`
         padding-top: 1%;
     }
     img {
-        width: 5vw;
+        width: 2.5vw;
         max-height: 8vh;
     }
     @media screen and (max-width: 768px) {
@@ -305,10 +306,12 @@ const Technology = styled(motion.div)`
 const Features = styled.div`
     height: 30vh;
     display: flex;
-    margin: 5% 5%;
-    margin-top: 1%;
-    align-items: center;
-    justify-content: center;
+    width: 90%;
+    margin: 5% 0%;
+    margin-top: 0%;
+    align-items: top;
+    padding: 0rem 0rem;
+    justify-content: space-between;
     @media screen and (max-width: 768px) {
         flex-direction: column;
         height: auto;
@@ -316,7 +319,10 @@ const Features = styled.div`
 `;
 
 const FeatureStyle = styled.div`
-    padding: 4vw;
+    height: 20vh;
+    width: 25%;
+    padding: 0rem 0rem;
+    margin: 0rem 0rem;
     h3 {
         font-size: 1.9vw;
         white-space: nowrap;

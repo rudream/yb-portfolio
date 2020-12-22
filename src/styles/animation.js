@@ -10,6 +10,7 @@ export const iconVariants = {
         },
     },
     hover: {
+        type: "tween",
         opacity: 1,
         scale: 1.2,
     },
