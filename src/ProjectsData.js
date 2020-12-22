@@ -92,7 +92,7 @@ export const ProjectsData = () => {
         kbphotography: {
             img: kbphotography,
             imgTwo: kbphotography2,
-            name: "Personal Portfolio",
+            name: "Portfolio",
             live: "http://www.karimboun.ca/",
             code: "https://github.com/rudream/KB-Photography",
             desc: "Portfolio website for a Software Engineer and Photographer.",

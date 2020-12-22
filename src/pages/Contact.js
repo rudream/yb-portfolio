@@ -143,7 +143,7 @@ const ContactStyle = styled(motion.div)`
 
 const StyledTitle = styled(motion.h1)`
     letter-spacing: 0.15vw;
-    font-size: 4.7vw;
+    font-size: 3.8vw;
     text-align: left;
     cursor: default;
     position: absolute;

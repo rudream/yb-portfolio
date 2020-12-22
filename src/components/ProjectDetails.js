@@ -69,26 +69,28 @@ const ProjectDetails = ({
                         <StyledHeader>
                             <StyledTitle>{name}</StyledTitle>
                             <Technologies>
-                                <StyledLink
-                                    whileHover={{ scale: 1.2, opacity: 1 }}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        window.open(`${live}`);
-                                    }}
-                                >
-                                    <motion.img src={link} alt="link" />
-                                    <motion.h3>Demo</motion.h3>
-                                </StyledLink>
-                                <StyledLink
-                                    whileHover={{ scale: 1.2, opacity: 1 }}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        window.open(`${code}`);
-                                    }}
-                                >
-                                    <img src={codeIcon} alt="code" />
-                                    <h3>Code</h3>
-                                </StyledLink>
+                                <StyledLinks>
+                                    <StyledLink
+                                        whileHover={{ scale: 1.2 }}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            window.open(`${live}`);
+                                        }}
+                                    >
+                                        <motion.img src={link} alt="link" />
+                                        <motion.h3>Demo</motion.h3>
+                                    </StyledLink>
+                                    <StyledLink
+                                        whileHover={{ scale: 1.2, opacity: 1 }}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            window.open(`${code}`);
+                                        }}
+                                    >
+                                        <img src={codeIcon} alt="code" />
+                                        <h3>Code</h3>
+                                    </StyledLink>
+                                </StyledLinks>
                                 {techs.map((tech) => {
                                     return (
                                         <Technology key={tech}>
@@ -203,6 +205,9 @@ const StyledDetails = styled(motion.div)`
 const StyledDetailsImage = styled(motion.img)`
     max-width: 90%;
     filter: drop-shadow(25px 25px 20px rgba(0, 0, 0, 0.5));
+    @media screen and (max-width: 768px) {
+        margin-top: 3vh;
+    }
 `;
 
 const SecondImage = styled(motion.img)`
@@ -210,13 +215,24 @@ const SecondImage = styled(motion.img)`
     margin-bottom: 2%;
 `;
 
+const StyledLinks = styled(motion.div)`
+    width: 30%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 768px) {
+    }
+`;
+
 const StyledLink = styled(motion.div)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    height: 10vh;
     img {
-        width: 2vw;
+        width: 3vw;
         user-select: none;
         user-drag: none;
     }
@@ -224,11 +240,17 @@ const StyledLink = styled(motion.div)`
         font-weight: lighter;
         user-select: none;
         font-size: 1vw;
+        opacity: 1;
+        color: white;
     }
     cursor: pointer;
     @media screen and (max-width: 768px) {
+        height: 5vh;
         h3 {
-            font-size: 2vw;
+            font-size: 3vw;
+        }
+        img {
+            width: 5vw;
         }
     }
 `;
@@ -282,9 +304,8 @@ const Technologies = styled(motion.div)`
     text-align: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 50%;
+    width: 40%;
     @media screen and (max-width: 768px) {
-        justify-content: space-around;
         width: 100%;
     }
 `;
@@ -300,6 +321,9 @@ const Technology = styled(motion.div)`
         max-height: 8vh;
     }
     @media screen and (max-width: 768px) {
+        img {
+            width: 5vw;
+        }
     }
 `;
 
@@ -340,6 +364,7 @@ const FeatureStyle = styled.div`
         opacity: 0.8;
     }
     @media screen and (max-width: 768px) {
+        width: 100%;
         h3 {
             font-size: 4vw;
         }
