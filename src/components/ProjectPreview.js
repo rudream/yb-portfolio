@@ -12,7 +12,7 @@ const ProjectPreview = ({ props, setDisplayingDetails, setCurrentData }) => {
     return (
         <>
             <StyledPreview
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 onClick={displayDetailsHandler}
                 layoutId={`${props.name}`}
             >
@@ -51,9 +51,12 @@ const StyledPreview = styled(motion.div)`
     cursor: pointer;
     opacity: 1;
     @media screen and (max-width: 768px) {
-        justify-content: space-evenly;
+        justify-content: space-between;
+        align-items: center;
         height: 40vh;
-        padding: 1vh 1vw;
+        padding: 8vh 3vh;
+        padding-top: 3vh;
+        padding-bottom: 10vh;
     }
 `;
 

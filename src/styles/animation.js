@@ -91,7 +91,7 @@ export const contactInfoVariants = {
         },
     },
     hover: {
-        scale: 1.2,
+        scale: 1.1,
         opacity: 1,
     },
     exit: {

@@ -86,7 +86,7 @@ const StyledNav = styled(motion.div)`
         flex-grow: 8;
     }
     .logo {
-        width: 7vw;
+        width: 8vw;
         flex-grow: 2;
     }
     @media screen and (max-width: 768px) {
